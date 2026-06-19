@@ -1,0 +1,8 @@
+[MESSAGES CONTROL]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    trailing-newlines,
+    too-few-public-methods,
+    no-name-in-module

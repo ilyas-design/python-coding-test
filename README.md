@@ -56,16 +56,30 @@ discovers tests without it. You do not need to add one, but you are free to disc
 
 ### How to run the program (including setup instructions if needed)
 
-_TODO by candidate_
+```bash
+python -m venv venv
+source venv/Scripts/activate   # Windows
+pip install -r requirements.txt
+python main.py
+```
 
 ### How to run tests
 
-_TODO by candidate_
+```bash
+pip install -r requirements.txt
+python -m pytest -v
+python -m pylint pricing/ tests/ main.py
+```
 
 ### Design choices
 
-_TODO by candidate_
+- One class per discount type. All extend `PricingRule` and have an `apply()` method.
+- `PricingEngine` adds up the order price, then runs the rule you chose.
+- Bad values (negative price, percent over 100…) raise a `ValueError`.
+- Only the engine stops the total from going below 0. The rules do not do that.
 
 ### What I would improve with more time
 
-_TODO by candidate_
+- Apply more than one discount on the same order.
+- Check that items have valid price and quantity.
+
